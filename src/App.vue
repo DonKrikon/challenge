@@ -8,6 +8,7 @@
           <label class="label_create">Titulo*</label>
           <input type="text" class="form-control" v-model="title" required>
         </div>
+
         <div class="mb-3">
           <label class="label_create">Estado*</label>
           <select v-model="status" class="form-control" required>
@@ -31,7 +32,7 @@
           <label class="label_create">Etiquetas</label>
           <input type="text" v-model="tags" class="form-control">
         </div>
-        <button type="submit" class="btn btn-success">Crear</button>
+        <button type="submit" class="btn btn-primary">Crear</button>
       </form>
     </section>
     <!--Tabla de Visualizacion-->
@@ -89,7 +90,7 @@
 
   <!--Modal de Tarea-->
   <div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="taskModalLabel">Tarea</h1>
@@ -111,7 +112,7 @@
 
   <!--Modal para Editar-->
   <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-fullscreen-sm-down">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="updateModalLabel">Actualizar</h1>
@@ -158,6 +159,7 @@
       </div>
     </div>
   </div>
+
 </template>
   
 
@@ -194,8 +196,8 @@ export default {
     //Limpiar Formulario de Creacion
     clearData() {
       this.title = ''
-      this.status = ''
-      this.date = ''
+      this.status = null
+      this.date = null
       this.comments = ''
       this.description = ''
       this.tags = ''
@@ -203,8 +205,8 @@ export default {
     //Limpiar Formulario de Actualizacion
     clearUpdate() {
       this.updateTitle = ''
-      this.updateStatus = ''
-      this.updateDate = ''
+      this.updateStatus = null
+      this.updateDate = null
       this.updateComments = ''
       this.updateDescription = ''
       this.updateTags = ''
@@ -250,6 +252,7 @@ export default {
         .then(response => {
           this.getTasks()
           this.clearData()
+
           console.log(response.data.detail)
         }
         )

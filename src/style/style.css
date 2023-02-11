@@ -23,11 +23,18 @@
 .main{
   width: 70%;
   padding: 10px;
+  max-height: 100%;
+  overflow-y:scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .options{
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 .options i{
@@ -51,7 +58,7 @@
 
 @media screen and (max-width:480px) {
   .table tbody{
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .main{
