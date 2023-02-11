@@ -1,0 +1,60 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.menu{
+  display: flex;
+  height: 100vh;
+}
+/*Crear Tareas*/
+.create__task{
+  width: 30%;
+  padding: 20px;
+  
+}
+
+.textarea_create{
+  resize: none;
+}
+/*Tareas*/
+.main{
+  width: 70%;
+  padding: 10px;
+}
+
+.options{
+  display: flex;
+  justify-content: space-between;
+}
+
+.options i{
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Media querys*/
+@media screen and (max-width:768px) {
+  .menu{
+    flex-direction: column;
+  }
+  .create__task{
+    width: 100%;
+  }
+
+  .main{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .table tbody{
+    font-size: 12px;
+  }
+
+  .main{
+    padding: 0;
+  }
+}
